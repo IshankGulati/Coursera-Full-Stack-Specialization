@@ -1,0 +1,100 @@
+<!doctype html>
+<head>
+  <style>
+    fieldset {background: lightYellow; border: 10px solid yellow;
+      margin-bottom: 10px; width: 720px}
+    label , label.cnr, label.ind{display: inline-block; text-align: right}
+    label {width: 180px; vertical-align: top}
+    label.cnr {width: 180px; vertical-align:top}
+    label.ind {width: 180px; vertical-align: middle}
+    textarea {width: 360px; height: 50px}
+    input[type="range"] {vertical-align: middle}
+    .left-label , .right-label{display: inline-block; text-align: center; 
+      width: 50px; padding: 3px; color: white; outline-style: solid;
+      outline-width: 1px; outline-offset: 0px}
+    .left-label {background-color: red; outline-color: red}
+    .right-label {background-color: purple; outline-color: purple}
+  select {    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer}    
+  </style>
+</head>
+<body>
+  <h1>Please Enter Your Details For Our Dating Website!</h1>
+  <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php"
+    method="post" enctype="multipart/form-data">
+    <fieldset>
+      <legend> Your Face </legend>
+      <label for="imageToUpload" >Your Image:</label>
+      <input type="file" name="previewImg" accept="image/*" required>
+      <br>
+      <label for="preview">Preview Image:</label>
+      <img id="preview" name="preview">
+    </fieldset>
+
+    <fieldset>
+      <legend> Your General Details </legend>
+      <label for="name"> Name:</label>
+      <input type="text" name="name" placeholder="Your Full Name" required> <br>
+      <label for="gender" class="cnr">Gender:</label>
+      <input type="radio" name="gender" value="male" required>Male
+      <input type="radio" name="gender" value="female" required>Female <br>
+      <label for="age"> Age:</label>
+      <input type="number" name="age" value=18 required> <br>
+      <label for="dob">Date of birth:</label>
+      <input type="date" name="dob"> <br>
+      <label for="fcolor">Favorite color:</label>
+      <input type="color" name="fcolor"> <br>
+      <label for="country"> Which Country: </label>
+      <select name="country">
+        <option selected disabled hidden value="">-- select a country --</option>
+        <option value="cn">China</option>
+        <option value="in">India</option>
+        <option value="pk">Pakistan</option>
+        <option value="uk">United Kingdom</option>
+        <option value="us">United States<option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend> Your Indicators </legend>
+      <label for="height" class="ind">Height:</label>
+      <span class="left-label">Short</span><input type="range" name="height"
+      min="0" max="100" step="5" value="50"> <span class="right-label">Tall</span>
+      <br>
+      <label for="salary" class="ind">Salary:</label>
+      <span class="left-label">Poor</span><input type="range" name="salary"
+      min="0" max="100" step="5" value="50"> <span class="right-label">Rich</span>
+      <br>
+    </fieldset>
+
+    <fieldset>
+      <legend> Your Contact Information </legend>
+      <label for="mail">Email:</label>
+      <input type="email" name="mail" required> <br>
+      <label for="mob">Mobile:</label>
+      <input type="tel" name="mob"> <br>
+      <label for="add">Address:</label>
+      <textarea rows=4 cols=50></textarea> <br>
+      <label for="cont" class="cnr">Method to contact you:</label>
+      <input type="checkbox" name="cont" value="mail">Email
+      <input type="checkbox" name="cont" value="whatsapp">Whatsapp
+      <input type="checkbox" name="cont" value="chat" >In-app chat
+    </fieldset>
+    <input type="submit" value="Submit">
+  </form>
+</body>

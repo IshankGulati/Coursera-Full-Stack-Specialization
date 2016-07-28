@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+</head>
+
+<body>
+  <script>
+  colors = ['Aqua', 'Black', 'Blue', 'Coral', 'Gray', 'Green', 'Maroon'];
+
+  var len = colors.length;
+  var guess_no = 0;
+  var guess;
+  do_game();
+
+  function do_game(){
+    guess = Math.floor(Math.random() * len);
+    var completed = false;
+    var names = colors.sort();
+    var choice;
+    alert("The answer is " + colors[guess] + ".");
+    while(!completed){
+      guess_no += 1;
+      found = false;
+      choice = prompt("I am thinking of one of these colors:\n\n" +
+      colors.join() + "\n\n" + "What color am I thinking of?\n\n");
+      completed = check_guess(choice);
+    }
+  }
+
+  function check_guess(choice){
+    var found = false;
+    var idx = 0;
+    var completed = false;
+    for (var i = 0; i < len; i++){
+      if(colors[i] == choice){
+        found = true;
+        idx = i;
+      }
+    }
+    if(!found){
+      alert("Sorry I don't recognize your color.\n\n" + 
+            "Please ty again.\n\n");
+    }
+    else if(choice == colors[guess]){
+      completed = true;
+      myBody = document.getElementsByTagName("body")[0];
+      myBody.style.background = colors[idx];
+      alert("Congratulations! You have guessed the color!\n\n" + 
+            "It took you " + guess_no + " guesses to finish this game.\n\n" + 
+            "You can see the color in the background.");
+    }
+    else if (idx < guess){
+      alert("Sorry, your guess is not correct!\n\n" + 
+            "Hint: your color is alphabetically lower than mine.\n\n" +
+            "Please try again.")
+    }
+    else if (idx > guess){
+      alert("Sorry, your guess is not correct!\n\n" + 
+            "Hint: your color is alphabetically higher than mine.\n\n" +
+            "Please try again.")
+    }
+
+    return completed;
+  }
+  </script>
+</body>

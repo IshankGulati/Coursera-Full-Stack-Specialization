@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+</head>
+
+<body>
+  <script>
+  colors = ['Aqua', 'Black', 'Blue', 'Coral', 'Gray', 'Green', 'Maroon'];
+  color_codes = ['00FFFF', '000000', '0000FF', 'FF7F50', '808080', '800000'];
+
+  len = colors.length;
+  do_game();
+
+  function do_game(){
+    var guess = Math.floor(Math.random() * len);
+    var completed = false;
+    var names = colors.sort();
+    var guess_no = 0;
+    var idx = 0;
+    var choice, found = false;
+    alert("The answer is " + colors[guess] + ".");
+    while(!completed){
+      guess_no += 1;
+      found = false;
+      choice = prompt("I am thinking of one of these colors:\n\n" +
+      colors.join() + "\n\n" + "What color am I thinking of?\n\n");
+      for (var i = 0; i < len; i++){
+        if(colors[i] == choice){
+          found = true;
+          idx = i;
+        }
+      }
+      if(!found){
+          alert("Sorry I don't recognize your color.\n\n" + 
+                "Please ty again.\n\n");
+      }
+      else if(choice == colors[guess]){
+          completed = true;
+      }
+    }
+  }
+  </script>
+</body>
