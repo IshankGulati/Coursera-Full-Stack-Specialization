@@ -1,0 +1,16 @@
+{
+  "name": "node-mongoose",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dishes1.js",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "mongoose": "^4.5.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ishank Gulati",
+  "license": "ISC"
+}
