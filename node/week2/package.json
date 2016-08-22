@@ -7,5 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ishank Gulati",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "mongoose": "^4.5.9",
+    "mongoose-currency": "^0.2.0"
+  }
 }
